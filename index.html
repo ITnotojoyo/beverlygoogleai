@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beverly Hills Malang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+    <style>
+      /* For smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .font-cormorant-garamond {
+        font-family: 'Cormorant Garamond', serif;
+      }
+
+      /* Custom Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes slowZoom {
+        from { transform: scale(1); }
+        to { transform: scale(1.05); }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 12px rgba(251, 191, 36, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) skewX(-20deg);
+        }
+        100% {
+          transform: translateX(200%) skewX(-20deg);
+        }
+      }
+      
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 1.2s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+      
+      .animate-pulse {
+        animation: pulse 2.5s infinite;
+      }
+
+      .animate-slowZoom {
+        animation: slowZoom 20s ease-in-out infinite alternate;
+      }
+
+      .shine-effect {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shine-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+        animation: shine 3s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
